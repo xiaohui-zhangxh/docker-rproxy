@@ -1,0 +1,2 @@
+#!/bin/sh
+/usr/local/bin/pen -f -S $(grep '^server' servers|wc -l) $@ -F /etc/pen/servers 8080
