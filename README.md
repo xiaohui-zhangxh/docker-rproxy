@@ -33,7 +33,9 @@ Use your own servers for proxying:
     LINES
     docker run -it --rm -p 127.0.0.1:8080:8080 -v "`realpath ~/rproxy`:/etc/pen/servers" rproxy -r
 
-         
+Keep docker rproxy always running:
+
+    docker run -d --name rproxy --restart=always -p 8080:8080 rproxy -r
 
 ## Check if it works
 
