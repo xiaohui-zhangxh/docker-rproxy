@@ -2,7 +2,7 @@
 
 ## Build Docker image
 
-edit `servers`, add/remove proxy servers
+edit `servers`, add/remove proxy servers  
 run `./build.sh` will create image `rproxy`
 
 ## Start docker
@@ -27,11 +27,11 @@ Options is passing to `pen`, useful options from `pen:0.34.1`:
 Use your own servers for proxying:
 
     mkdir ~/rproxy
-    cat <<LINES > ~/rproxy/c
+    cat <<LINES > ~/rproxy/servers
     server 0 address 62.210.169.105 port 2366
     server 1 address 62.210.169.105 port 2367
     LINES
-    docker run -it --rm -p 127.0.0.1:8080:8080 -v "`pwd ~/rproxy`:/etc/pen/servers" rproxy -r
+    docker run -it --rm -p 127.0.0.1:8080:8080 -v "`realpath ~/rproxy`:/etc/pen/servers" rproxy -r
 
          
 
