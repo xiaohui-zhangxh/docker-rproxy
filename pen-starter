@@ -1,2 +1,2 @@
 #!/bin/sh
-/usr/local/bin/pen -f $@ -F /etc/pen/servers 8080
+/usr/local/bin/pen -f -F /etc/pen/servers $@ 8080
