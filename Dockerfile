@@ -16,6 +16,5 @@ RUN mkdir /etc/pen/
 ADD pen-starter /usr/local/bin/pen-starter
 RUN chmod 755 /usr/local/bin/pen-starter
 ADD servers /etc/pen/servers
-VOLUME ["/etc/pen/"]
 EXPOSE 8080
 ENTRYPOINT ["/usr/local/bin/pen-starter"]
