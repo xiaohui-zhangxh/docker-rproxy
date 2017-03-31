@@ -3,11 +3,11 @@
 ## Build Docker image
 
 edit `servers`, add/remove proxy servers  
-run `./build.sh` will create image `rproxy`
+run `./build.sh` will create image `xiaohuizhang/rproxy`
 
 ## Start docker
 
-    docker run -it --rm -p 127.0.0.1:8080:8080 rproxy [options]
+    docker run -it --rm -p 127.0.0.1:8080:8080 xiaohuizhang/rproxy [options]
 
 Options is passing to `pen`, useful options from `pen:0.34.1`:
 
@@ -22,7 +22,7 @@ Options is passing to `pen`, useful options from `pen:0.34.1`:
 
 `-r` is useful for load balance:
 
-    docker run -it --rm -p 127.0.0.1:8080:8080 rproxy -r
+    docker run -it --rm -p 127.0.0.1:8080:8080 xiaohuizhang/rproxy -r
 
 Use your own servers for proxying:
 
@@ -31,11 +31,11 @@ Use your own servers for proxying:
     server 0 address 62.210.169.105 port 2366
     server 1 address 62.210.169.105 port 2367
     LINES
-    docker run -it --rm -p 127.0.0.1:8080:8080 -v "`realpath ~/rproxy`:/etc/pen/servers" rproxy -r
+    docker run -it --rm -p 127.0.0.1:8080:8080 -v "`realpath ~/rproxy`:/etc/pen/servers" xiaohuizhang/rproxy -r
 
 Keep docker rproxy always running:
 
-    docker run -d --name rproxy --restart=always -p 8080:8080 rproxy -r
+    docker run -d --name rproxy --restart=always -p 8080:8080 xiaohuizhang/rproxy -r
 
 ## Check if it works
 
