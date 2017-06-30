@@ -31,7 +31,7 @@ Use your own servers for proxying:
     server 0 address 62.210.169.105 port 2366
     server 1 address 62.210.169.105 port 2367
     LINES
-    docker run -it --rm -p 127.0.0.1:8080:8080 -v "`realpath ~/rproxy`:/etc/pen/servers" xiaohuizhang/rproxy -r
+    docker run -it --rm -p 127.0.0.1:8080:8080 -v "`realpath ~/rproxy/servers`:/etc/pen/servers" xiaohuizhang/rproxy -r
 
 Keep docker rproxy always running:
 
